@@ -6,6 +6,13 @@ cd server
 source stripe/bin/activate
 python app.py
 ```
+## Start ReactJS Application
+```
+cd ../book-app
+npm start
+```
+
+
 [enter 'http://localhost:5000/books](http://localhost:5000/books
 ![books-json.png](books-json.png)
 
@@ -31,12 +38,12 @@ Google Search: install reactjs on windows 10
 
 ## Start from scratch
 ```
-sudo npx create-react-app wang-app
-sudo chown -R wangqianjiang wang-app
-cd wang-app
+sudo npx create-react-app book-app
+sudo chown -R wangqianjiang book-app
+cd book-app
 npm start
 ```
-You need change ownership for all all files under the wang-app folder because you need make change on those source code. where 'wangqianjiang' is owner of my laptop.
+You need change ownership for all all files under the book-app folder because you need make change on those source code. where 'wangqianjiang' is owner of my laptop.
 
 ## Install pip
 ```sh
