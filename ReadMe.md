@@ -1,20 +1,30 @@
 # REACT JS Learning Notes
 
+## Select Python Interpreter
+Command Palette... > Python: Select Interpreter
+```json
+{
+    "python.pythonPath": "c:\\Users\\12818\\workspace\\python-I\\env\\Scripts\\python.exe",
+    "python.formatting.provider": "yapf"
+}
+```
 ## Start Python Server
 ```
 cd server
-source stripe/bin/activate
+pip install requirements.txt
 python app.py
 ```
+[start browser](http://localhost:5000/books)
+
+![Books Website](server/books-website.png)
+
 ## Start ReactJS Application
 ```
-cd ../book-app
+cd book-app
 npm start
 ```
 
-
-[enter 'http://localhost:5000/books](http://localhost:5000/books
-![books-json.png](books-json.png)
+![华夏图书管理网页](http://localhost:3000/)
 
 ## References
 * [Build a Simple CRUD App with Python, Flask, and React](https://developer.okta.com/blog/2018/12/20/crud-app-with-python-flask-react)
