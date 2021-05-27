@@ -24,9 +24,9 @@ const AddBookForm = props => {
 			}}
 		>	
 			<div>
-				<TextField label="Title" name="title" onChange={handleInputChange}/><br/>
-				<TextField name="author" label="Author" onChange={handleInputChange} /><br/>
-				<TextField name="price" label="Price" onChange={handleInputChange} /><br/><br/>
+				<TextField placeholder="Title" name="title" onChange={handleInputChange}/><br/>
+				<TextField name="author" placeholder="Author" onChange={handleInputChange} /><br/>
+				<TextField name="price" placeholder="Price" onChange={handleInputChange} /><br/><br/>
 			</div>
 			<Button variant="contained" color="primary" type="submit">Add new book</Button>
 		</form>
