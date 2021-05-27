@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styles from "./wang.css"
+import Button from "@material-ui/core/Button"
 
 const AddBookForm = props => {
 	const initialFormState = { _id: null, title: '', author: '', price: '',read:false, rating:0 }
@@ -27,7 +28,7 @@ const AddBookForm = props => {
 			<input type="text" name="author" value={book.author} onChange={handleInputChange} />
 			<label>Price</label>
 			<input type="text" name="price" value={book.price} onChange={handleInputChange} />
-			<button className={styles.danger}>Add new book</button>
+			<Button variant="contained" color="primary" type="submit">Add new book</Button>
 		</form>
 	)
 }
