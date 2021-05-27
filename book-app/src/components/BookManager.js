@@ -15,31 +15,32 @@ const BookManager = () => {
 	const [ books, setBooks ] = useState(booksData)
 	const [ currentBook, setCurrentBook ] = useState(initialFormState)
 	const [ editing, setEditing ] = useState(false)
+	const [ fetched, setFetched ] = useState(false)
 
 	// Pulling data from Mongo database throw Python app.py service
 	useEffect(() => {
 		fetch('http://localhost:5000/books').then(response => 
 		  response.json().then(data => {
 		  setBooks(data.books);
+		  setFetched(true)
 		}))
-	  }, booksData);
+	  });
 
-	function getBooks() {
-		fetch('http://localhost:5000/books').then(response => 
-		  response.json().then(data => {
-		  setBooks(data.books);
-		}))	;	
-	}
+	// function getBooks() {
+	// 	fetch('http://localhost:5000/books').then(response => 
+	// 	  response.json().then(data => {
+	// 	  setBooks(data.books);
+	// 	}))	;	
+	// }
 	  
 	// CRUD operations
 	const addBook = book => {
-		// book.id = books.length + 1
-		// setBooks([ ...books, book ])
 		console.log("add: " + book)
         axios.post("http://localhost:5000/books", book)
             .then(response => {
 				console.log(response)
-				getBooks()
+				// getBooks()
+				setFetched(false)
             })
             .catch(error => {
                 console.log(error)
@@ -52,7 +53,8 @@ const BookManager = () => {
         axios.delete("http://localhost:5000/books/" + _id)
             .then(response => {
 				console.log(response)
-				getBooks()
+				// getBooks()
+				setFetched(false) //只是为了改变状态，从而调用useEffect
             })
             .catch(error => {
                 console.log(error)
@@ -71,7 +73,8 @@ const BookManager = () => {
 		axios.put("http://localhost:5000/books/" + _id, book)
             .then(response => {
 				console.log(response)
-				getBooks()
+				// getBooks()
+				setFetched(false)
             })
             .catch(error => {
                 console.log(error)

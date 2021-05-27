@@ -130,6 +130,13 @@ T--receive-->B
 ## React useEffect
 [useEffect Hook webside](https://reactjs.org/docs/hooks-effect.html)
 
+useEffect Similar to componentDidMount and componentDidUpdate, 
+关键点是，必须改变任意一个state，如果没有改变，我们就必须再次运行fetch数据。
+在BookManager.js中增加state：fetched，解决了重复调用的问题。
+```js
+//BookManager.js
+	const [ fetched, setFetched ] = useState(false)
+```
 ## Using Material-ui
 ```DOS
 npm install @material-ui/core
