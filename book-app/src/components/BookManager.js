@@ -90,7 +90,7 @@ const BookManager = () => {
 				<Popup addBook={addBook}/>
 			</div>
 			<div className="flex-row">
-				{/* <div className="flex-large">
+				{ <div className="flex-large">
 					{editing ? (
 						<Fragment>
 							<h2>Edit book</h2>
@@ -107,7 +107,7 @@ const BookManager = () => {
 							<AddBookForm addBook={addBook} />
 						</Fragment>
 					)}
-				</div> */}
+				</div> }
 				<div className="flex-large">
 					<h2>View books</h2>
 					<BookTable books={books} editRow={editRow} deleteBook={deleteBook} />

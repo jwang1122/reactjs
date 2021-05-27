@@ -84,9 +84,35 @@ add oneline in package.json
     ],
 ```
 
-install react bootstrap
+* install react bootstrap
 ```bash
 npm install react-bootstrap bootstrap
 npm i history
 npm i react-router-dom
+```
+
+## File Structure
+```output
+REACTJS
+  ├── server/ (python backend server)
+  |    ├── app.py (Start program)
+  |    └── bookdb.py (Database service)
+  |
+  ├── book-app (react web server)
+  |    ├── public
+  |    |     └── index.html (main web page)
+  │    └── src
+  │         ├── App.js (Main Entry)
+  |         ├── index.js (connect App.js and index.html)
+  |         └── components
+  |               ├── BookManager.js (Main template)
+  |               ├── forms
+  |               |     ├── AddBookFOrm.js
+  |               |     └── EditBookForm.js  
+  |               └── tables
+  |                     └── BookTable.js (define table used in BookManager) 
+  |               
+  |
+  ├── package.json (Application configuration)
+  └── README.md
 ```
