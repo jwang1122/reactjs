@@ -16,12 +16,13 @@ const BookManager = () => {
 	const [ currentBook, setCurrentBook ] = useState(initialFormState)
 	const [ editing, setEditing ] = useState(false)
 
+	// Pulling data from Mongo database throw Python app.py service
 	useEffect(() => {
 		fetch('http://localhost:5000/books').then(response => 
 		  response.json().then(data => {
 		  setBooks(data.books);
 		}))
-	  }, []);
+	  }, booksData);
 
 	function getBooks() {
 		fetch('http://localhost:5000/books').then(response => 

@@ -116,6 +116,20 @@ REACTJS
   ├── package.json (Application configuration)
   └── README.md
 ```
+## Code design
+```mermaid
+graph TB
+M[(MongoDB)]--fatch-->A(app.py)
+A--create-->M
+A--provide:CRUD-->V(WebService:CRUD)
+V--send-->B(BookManager.js)
+B--receive-->V
+B--send-->T(BookTable.js)
+T--receive-->B
+```
+## React useEffect
+[useEffect Hook webside](https://reactjs.org/docs/hooks-effect.html)
+
 ## Using Material-ui
 ```DOS
 npm install @material-ui/core
