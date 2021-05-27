@@ -25,7 +25,7 @@ const BookTable = props => (
                 class="btn btn-warning"
                >
                 Edit
-              </button>
+              </button>&nbsp;
               <button
                 onClick={() => props.deleteBook(book._id)}
                 class="btn btn-danger"

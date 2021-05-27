@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import Button from "@material-ui/core/Button"
 
 const EditBookForm = props => {
-	const initialFormState = { _id: null, title: '', author: '', price: '',read:false, rating:0 }
+	// const initialFormState = { _id: null, title: '', author: '', price: '',read:false, rating:0 }
   const [ book, setBook ] = useState(props.currentBook)
 
-  useEffect(
-    () => {
-      setBook(book)
+  // useEffect(
+  //   () => {
+  //     setBook(book)
       
-    },
-    [ props ]
-  )
+  //   },
+  //  [ props ]
+  // )
   // You can tell React to skip applying an effect if certain values haven’t changed between re-renders. [ props ]
 
   const handleInputChange = event => {
@@ -32,10 +33,10 @@ const EditBookForm = props => {
       <input type="text" name="author" value={book.author} onChange={handleInputChange} />
       <label>Price</label>
       <input type="text" name="price" value={book.price} onChange={handleInputChange} />
-      <button>Update book</button>
-      <button onClick={() => props.setEditing(false)} className="button muted-button">
+      <Button variant="contained" color="secondary" type="submit">Update book</Button>&nbsp;
+      <Button variant="contained" color="primary" onClick={() => props.setEditing(false)} >
         Cancel
-      </button>
+      </Button>
     </form>
   )
 }

@@ -3,7 +3,8 @@ import axios from 'axios'
 import AddBookForm from './forms/AddBookForm'
 import EditBookForm from './forms/EditBookForm'
 import BookTable from './tables/BookTable'
-import Popup from './Popup'
+//import Popup from './Popup'
+import '../App.css'
 
 const BookManager = () => {
 	// Data
@@ -85,7 +86,7 @@ const BookManager = () => {
 
 	return (
 		<div className="container">
-			<h1>华夏中文学校-图书列表管理</h1>
+			<h1>华夏中文学校-图书管理</h1>
 			{/* <div>
 				<Popup addBook={addBook}/>
 			</div> */}
