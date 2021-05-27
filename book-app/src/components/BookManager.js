@@ -60,7 +60,7 @@ const BookManager = () => {
 	}
 
 	const updateBook = (_id, book) => {
-		// setEditing(false)
+		setEditing(false)
 		// setBooks(books.map(book => (book.id === id ? updatedBook : book)))
 
 		console.log("_id: " + _id)
@@ -86,11 +86,11 @@ const BookManager = () => {
 	return (
 		<div className="container">
 			<h1>华夏中文学校-图书列表管理</h1>
-			<div>
+			{/* <div>
 				<Popup addBook={addBook}/>
-			</div>
+			</div> */}
 			<div className="flex-row">
-				{ <div className="flex-large">
+				{ <div className="flex-shrink">
 					{editing ? (
 						<Fragment>
 							<h2>Edit book</h2>

@@ -116,3 +116,12 @@ REACTJS
   ├── package.json (Application configuration)
   └── README.md
 ```
+## Using Material-ui
+```DOS
+npm install @material-ui/core
+npm install @material-ui/icons
+
+```
+
+## Basic concepts of flexbox
+[Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox)
