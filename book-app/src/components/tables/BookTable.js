@@ -22,13 +22,13 @@ const BookTable = props => (
                 onClick={() => {
                   props.editRow(book)
                 }}
-                class="btn btn-warning"
+                className="btn btn-warning"
                >
                 Edit
               </button>&nbsp;
               <button
                 onClick={() => props.deleteBook(book._id)}
-                class="btn btn-danger"
+                className="btn btn-danger"
               >
                 Delete
               </button>

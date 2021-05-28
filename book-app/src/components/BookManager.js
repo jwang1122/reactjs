@@ -15,23 +15,23 @@ const BookManager = () => {
 	const [ books, setBooks ] = useState(booksData)
 	const [ currentBook, setCurrentBook ] = useState(initialFormState)
 	const [ editing, setEditing ] = useState(false)
-	const [ fetched, setFetched ] = useState(false)
 
 	// Pulling data from Mongo database throw Python app.py service
 	useEffect(() => {
 		fetch('http://localhost:5000/books').then(response => 
 		  response.json().then(data => {
 		  setBooks(data.books);
-		  setFetched(true)
+		  console.log(data.books);
 		}))
-	  });
+	  },[]);
 
-	// function getBooks() {
-	// 	fetch('http://localhost:5000/books').then(response => 
-	// 	  response.json().then(data => {
-	// 	  setBooks(data.books);
-	// 	}))	;	
-	// }
+	function getBooks() {
+		fetch('http://localhost:5000/books').then(response => 
+		  response.json().then(data => {
+		  setBooks(data.books);
+		  console.log(data.books);
+		}))	;	
+	}
 	  
 	// CRUD operations
 	const addBook = book => {
@@ -39,8 +39,7 @@ const BookManager = () => {
         axios.post("http://localhost:5000/books", book)
             .then(response => {
 				console.log(response)
-				// getBooks()
-				setFetched(false)
+				getBooks()
             })
             .catch(error => {
                 console.log(error)
@@ -49,32 +48,23 @@ const BookManager = () => {
 
 	const deleteBook = _id => {
 		setEditing(false)
-		console.log("deleteBook: " + _id)
         axios.delete("http://localhost:5000/books/" + _id)
             .then(response => {
 				console.log(response)
-				// getBooks()
-				setFetched(false) //只是为了改变状态，从而调用useEffect
+				getBooks()
             })
             .catch(error => {
                 console.log(error)
 			})
-
-		//setBooks(books.filter(book => book.id !== _id))
 	}
 
 	const updateBook = (_id, book) => {
 		setEditing(false)
-		// setBooks(books.map(book => (book.id === id ? updatedBook : book)))
-
-		console.log("_id: " + _id)
-		console.log("updateBook id: " + book._id)
 
 		axios.put("http://localhost:5000/books/" + _id, book)
             .then(response => {
 				console.log(response)
-				// getBooks()
-				setFetched(false)
+				getBooks()
             })
             .catch(error => {
                 console.log(error)
